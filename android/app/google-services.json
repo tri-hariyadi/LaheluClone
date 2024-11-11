@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "10075184186",
+    "project_id": "lahelu-clone-f29d0",
+    "storage_bucket": "lahelu-clone-f29d0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10075184186:android:56cc0d201540a481a52903",
+        "android_client_info": {
+          "package_name": "com.laheluclone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzWPNVre79n6MWoL9JNiFlWDqbFTX5wzU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

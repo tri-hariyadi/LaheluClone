@@ -1,3 +1,33 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      /** assets */
+      "@assets/*": ["src/assets/*"],
+      "@images/*": ["src/assets/images/*"],
+      "@icons/*": ["src/assets/icons/*"],
+
+      "@components": ["src/components/index.ts"],
+      "@components/types": ["src/components/types.d.ts"],
+      "@navigations/*": ["src/navigations/*"],
+      "@parts/*": ["src/parts/*"],
+      "@parts": ["src/parts/index.ts"],
+      "@screens/*": ["src/screens/*"],
+
+      "@store": ["src/store/index.ts"],
+      "@store/*": ["src/store/*"],
+      "@slices/*": ["src/store/slices/*"],
+
+      "@styles": ["src/styles/index.ts"],
+
+      /** utils */
+      "@utils/*": ["src/utils/*"],
+      "@services/*": ["src/utils/services/*"],
+
+      "types/*": ["src/types/*"],
+
+      "@env": [".env"]
+    }
+  }
 }

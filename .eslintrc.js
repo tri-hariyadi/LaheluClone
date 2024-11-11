@@ -1,4 +1,96 @@
 module.exports = {
   root: true,
-  extends: '@react-native',
+  extends: ['@react-native', 'plugin:import/recommended', 'prettier'],
+  plugins: ['import'],
+  rules: {
+    'react-native/no-inline-styles': 0,
+    'react-hooks/exhaustive-deps': 0,
+    'prettier/prettier': [
+      'error',
+      {
+        'no-inline-styles': false,
+        endOfLine: 'auto',
+      },
+    ],
+    'no-unexpected-multiline': 'error',
+    'no-unused-vars': ['error', {argsIgnorePattern: '^_'}],
+    'react/jsx-no-target-blank': 'off',
+    semi: 'error',
+    curly: 'off',
+    'no-duplicate-imports': 'error',
+    'no-dupe-else-if': 'warn',
+    'no-multi-spaces': 'error',
+    'no-multiple-empty-lines': 'error',
+    'no-trailing-spaces': 'error',
+    'no-dupe-keys': 'error',
+    'no-return-assign': 'error',
+    'no-console': 'off',
+    'semi-style': ['error', 'last'],
+    'eol-last': ['error', 'always'],
+    'no-empty': [
+      'error',
+      {
+        allowEmptyCatch: true,
+      },
+    ],
+    'import/no-named-as-default': 'off',
+    'import/no-unresolved': ['error', {ignore: ['^@']}],
+    'import/named': 'off',
+    'import/newline-after-import': 'error',
+    'import/exports-last': 'off',
+    'import/namespace': 'off',
+    'import/default': 'off',
+    'import/no-nodejs-modules': ['error', {allow: ['react']}],
+    'sort-imports': ['error', {ignoreCase: true, ignoreDeclarationSort: true}],
+    'import/order': [
+      'error',
+      {
+        groups: [['external', 'builtin'], ['internal'], ['parent', 'sibling']],
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['internal', 'react'],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
+    'import/resolver': {
+      node: {
+        paths: ['./'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
+        alias: {
+          '@assets/*': 'src/assets/*',
+          '@components': './src/components/index.tsx',
+          '@components/types': './src/components/types.d.ts',
+          '@navigations/*': './src/navigations/*',
+          '@parts': './src/parts/index.ts',
+          '@parts/*': './src/parts/*',
+          '@screens/*': './src/screens/*',
+          '@store/*': './src/store/*',
+          '@slices/*': 'src/store/slices/*',
+          '@styles': './src/styles/index.tsx',
+          'types/*': 'src/types/*',
+          '@utils/*': './src/utils/*',
+          '@services/*': './src/utils/services/*',
+          '@env': '.env',
+        },
+      },
+      typescript: {},
+    },
+  },
 };
